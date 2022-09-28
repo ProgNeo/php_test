@@ -1,0 +1,33 @@
+{% extends "__layout.twig" %}
+{% import "button.twig" as btn %}
+
+{% block content %}
+	<ul class="list-group">
+    <li class="list-group-item">
+        <ul class="nav nav-pills gap-3">
+            <li class="nav-item">
+                {{ btn.btn("Steins;Gate", "/steins-gate/", true) }}
+            </li>
+            <li class="nav-item">
+                {{ btn.btn("Картинка", "/steins-gate/image", true, "light") }}
+            </li>
+            <li class="nav-item">
+                {{ btn.btn("Описание", "/steins-gate/image", true, "light") }}
+            </li>
+        </ul>
+    </li>
+    <li class="list-group-item gap-3">
+        <ul class="nav nav-pills gap-3">
+            <li class="nav-item">
+                {{ btn.btn("Hellsing Ultimate", "/hellsing-ultimate/", true) }}
+            </li>
+            <li class="nav-item">
+                {{ btn.btn("Картинка", "/hellsing-ultimate/image", true, "light") }}
+            </li>
+            <li class="nav-item">
+                {{ btn.btn("Описание", "/hellsing-ultimate/image", true, "light") }}
+            </li>
+        </ul>
+    </li>
+</ul>
+{% endblock %}
