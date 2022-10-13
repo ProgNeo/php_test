@@ -19,11 +19,17 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
-						{% for item in menu %}
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/">Главная</a>
+						</li>
+						{% for genre in genres %}
 							<li class="nav-item">
-								<a class="nav-link {{ title == item.title ? 'active' }}" aria-current="page" href="{{item.url}}">{{item.title}}</a>
+								<a class="nav-link" href="/?genre={{ genre.genre }}">{{ genre.genre|title }}</a>
 							</li>
 						{% endfor %}
+						<li class="nav-item">
+							<a class="nav-link active" aria-current="page" href="/search">Поиск</a>
+						</li>
 					</ul>
 				</div>
 			</div>

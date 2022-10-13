@@ -1,9 +1,10 @@
 <?php
-require_once "TwigBaseController.php";
+require_once "BaseAnimeTwigController.php";
 
-class Controller404 extends TwigBaseController {
-    public $template = "404.twig"; 
-    public $title = "Страница не найдена";
+class Controller404 extends BaseAnimeTwigController
+{
+    public string $template = "404.twig";
+    public string $title = "Страница не найдена";
 
     public function get()
     {
@@ -11,4 +12,3 @@ class Controller404 extends TwigBaseController {
         parent::get();
     }
 }
-?>

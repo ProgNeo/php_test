@@ -1,3 +1,3 @@
 {% macro btn(text, url, is_styled, type) %}
-  <a href="{{ url }}" class="btn btn-{{ is_styled ? type|default('primary') : 'link' }}">{{ text }}</a>
+  <a href="{{ url }}" class="btn btn-{{ is_styled ? type|default('primary w-100') : 'link' }}">{{ text }}</a>
 {% endmacro %}

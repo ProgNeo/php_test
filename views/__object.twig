@@ -1,13 +1,13 @@
 {% extends "__layout.twig" %}
 
 {% block content %}
-	<h1>{{title}}</h1>
+	<div>{{ description }}</div>
 	<ul class="nav nav-pills py-2">
 		<li class="nav-item">
-			<a class="nav-link {{ is_image ? 'active' }}" href="{{link}}/image">Картинка</a>
+			<a class="nav-link {{ is_image ? 'active' }}" href="?show=image">Картинка</a>
 		</li>
 		<li class="nav-item">
-			<a class="nav-link {{ is_info ? 'active' }}" href="{{link}}/info">Описание</a>
+			<a class="nav-link {{ is_info ? 'active' }}" href="?show=info">Описание</a>
 		</li>
 	</ul>
 	<div class="border p-4">
