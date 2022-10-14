@@ -9,7 +9,7 @@ class ObjectController extends BaseAnimeTwigController
     {
         $context = parent::getContext();
 
-        $query = $this->pdo->prepare("SELECT *, id FROM anime_objects WHERE id= :my_id");
+        $query = $this->pdo->prepare("SELECT *, id FROM objects WHERE id= :my_id");
         $query->bindValue("my_id", $this->params['id']);
         $query->execute();
 
@@ -30,7 +30,7 @@ class ObjectController extends BaseAnimeTwigController
         return $context;
     }
 
-    public function get(){
+    public function get(array $context){
         if (isset($_GET['show'])) {
             if ($_GET['show'] == 'image') {
                 $this->template = "image.twig";
@@ -39,6 +39,6 @@ class ObjectController extends BaseAnimeTwigController
                 $this->template = "info.twig";
             }
         }
-        parent::get();
+        parent::get($context);
     }
 }

@@ -11,11 +11,11 @@ class MainController extends BaseAnimeTwigController
         $context = parent::getContext();
 
         if (isset($_GET['genre'])) {
-            $query = $this->pdo->prepare("SELECT * FROM anime_objects WHERE genre = :genre");
+            $query = $this->pdo->prepare("SELECT * FROM objects WHERE genre = :genre");
             $query->bindValue("genre", $_GET['genre']);
             $query->execute();
         } else {
-            $query = $this->pdo->query("SELECT * FROM anime_objects");
+            $query = $this->pdo->query("SELECT * FROM objects");
         }
 
         $context['anime_objects'] = $query->fetchAll();

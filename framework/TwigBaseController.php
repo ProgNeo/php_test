@@ -26,10 +26,10 @@ class TwigBaseController extends BaseController
         return $context;
     }
 
-    public function get()
+    public function get(array $context)
     {
         try {
-            echo $this->twig->render($this->template, $this->getContext());
+            echo $this->twig->render($this->template, $context);
         } catch (LoaderError|RuntimeError|SyntaxError) {
         }
     }

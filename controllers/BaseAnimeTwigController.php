@@ -5,7 +5,7 @@ class BaseAnimeTwigController extends TwigBaseController {
     {
         $context = parent::getContext();
 
-        $query = $this->pdo->query("SELECT DISTINCT genre FROM anime_objects ORDER BY 1");
+        $query = $this->pdo->query("SELECT DISTINCT genre FROM objects ORDER BY 1");
         $types = $query->fetchAll();
         $context['genres'] = $types;
 

@@ -4,6 +4,7 @@ require_once "BaseAnimeTwigController.php";
 class SearchController extends BaseAnimeTwigController
 {
     public string $template = "search.twig";
+    public string $title = "Поиск";
 
     public function getContext(): array
     {
@@ -18,7 +19,7 @@ class SearchController extends BaseAnimeTwigController
 
         $sql = <<<EOL
 SELECT id, title
-FROM anime_objects
+FROM objects
 WHERE (:title = '' OR title like CONCAT('%', :title, '%'))
   AND (:description = '' OR description like CONCAT('%', :description, '%'))
   AND (:genre = '' or genre = :genre)
